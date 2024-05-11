@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function index($id = 'noname', $pass = 'unknown')
+    // __invoke()
+    // "__"で始まるものはPHPのマジックメソッド
+    // __invoke()はクラスのインスタンスを関数的に実行させるもの
+    public function __inVoke()
     {
         return <<<EOF
             <html>
                 <head>
-                    <title>Hello/index</title>
+                    <title>Hello</title>
                     <style>
                         // body { font-size:16pt; color:#999; }
                         // h1 { fonst-size:100pt; text-align:right; color:#eee;
@@ -20,11 +23,7 @@ class HelloController extends Controller
                 </head>
                 <body>
                     <h1>Index</h1>
-                    <p>これは、HelloControllerのindexアクションです。</p>
-                    <ul>
-                        <li>ID: {$id}</li>
-                        <li>PASS: {$pass}</li>
-                    </ul>
+                    <p>HelloControllerはシングルアクション・コントローラです。</p>
                 </body>
             </html>
     EOF;
