@@ -19,4 +19,3 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', [HelloController::class, 'index']);
-// http://localhost/hello?id=xxx とアクセス

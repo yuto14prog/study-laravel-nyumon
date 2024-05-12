@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HelloController extends Controller
 {
-    // クエリー文字列を取得
-    public function index(Request $request)
+    public function index()
     {
         $data = [
-            'msg' => 'これはコントローラから渡されたメッセージです。',
-            'id' => $request->id,
+            'msg' => 'これはBladeを利用したサンプルです。',
         ];
+
+        // 同じ名前のViewがあっても、Bladeが優先される
         return view('hello.index', $data);
     }
 }
