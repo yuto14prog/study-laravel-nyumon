@@ -18,11 +18,15 @@
 </head>
 
 <body>
-    <h1>Blade/Index</h1>
-    <p>{{ $msg }}</p>
-
     <p>ここが本文のコンテンツです。</p>
-    <p>ViewComposer value<br>'view_message' = {{ $view_message }}</p>
+    <table>
+        @foreach($data as $item)
+        <tr>
+            <th>{{ $item['name'] }}</th>
+            <td>{{ $item['mail'] }}</td>
+        </tr>
+        @endforeach
+    </table>
 </body>
 
 </html>
