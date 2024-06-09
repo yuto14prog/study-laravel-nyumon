@@ -14,6 +14,7 @@ class Kernel extends HttpKernel
      *
      * @var array<int, class-string|string>
      */
+    // グローバルミドルウェア（すべてのRouteに適用）
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
