@@ -14,6 +14,7 @@ class HelloMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+    // （コントローラーの前処理）
     public function handle(Request $request, Closure $next)
     {
         $data = [
@@ -27,4 +28,13 @@ class HelloMiddleware
 
         return $next($request);
     }
+
+    // middlewareはレスポンスを返す直前の処理（後処理）もできる
+    // public function handle(Request $request, Closure $next)
+    // {
+    //     $response = $next($request);
+    //     // 何かしらの処理
+
+    //     return $response;
+    // }
 }
